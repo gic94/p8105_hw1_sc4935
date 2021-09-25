@@ -13,7 +13,7 @@ library(tidyverse)
 
 # Problem 1
 
-First we create a data frame include 4 different type variables.
+Firstly, we create a data frame include 4 different type variables.
 
 ```{r}
 problem1_df = 
@@ -27,4 +27,11 @@ problem1_df =
 problem1_df
 ```
 
+Secondly, we take the mean of each variable in the dataframe.
 
+```{r}
+mean(pull(problem1_df, norm_samp))
+mean(pull(problem1_df, ele_great_0))
+mean(pull(problem1_df, vec_char))
+mean(pull(problem1_df, vec_factor))
+```
