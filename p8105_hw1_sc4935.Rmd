@@ -5,7 +5,26 @@ date: "9/25/2021"
 output: github_document
 ---
 
+```{r}
+library(tidyverse)
+```
 
 
+
+# Problem 1
+
+First we create a data frame include 4 different type variables.
+
+```{r}
+problem1_df = 
+  tibble(
+    norm_samp = rnorm(10),
+    ele_great_0 = norm_samp > 0,
+    vec_char = c("Rhinos", "Kittens", "Raccoons", "Goats", "Skunks", "Hedgehogs", "Otters", "Giraffes", "Seals", "Fox"),
+    vec_factor = factor(c("herbivore", "carnivores", "omnivorous",  "herbivore", "omnivorous", "omnivorous", "carnivores", "herbivore", "carnivores", "omnivorous"))
+    )
+
+problem1_df
+```
 
 
