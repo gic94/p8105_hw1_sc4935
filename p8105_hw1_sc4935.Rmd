@@ -57,8 +57,32 @@ In conclusion, since the true or false and the levels of characters can be easil
 
 # Problem 2
 
+## Palmer Penguins Project
+
+```{r}
+data("penguins", package = "palmerpenguins")
+```
 
 
 
+### First describe the data in dataset, including the names/values of important variables.
+
+```{r}
+names(penguins)
+skimr::skim(penguins)
+```
 
 
+
+### Describe the size of data set.
+
+```{r}
+nrow(penguins)
+ncol(penguins)
+```
+
+
+
+### Calculate the mean flipper length.
+
+```{r}
