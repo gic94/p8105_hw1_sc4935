@@ -86,3 +86,15 @@ ncol(penguins)
 ### Calculate the mean flipper length.
 
 ```{r}
+mean(penguins$flipper_length_mm, na.rm = TRUE)
+```
+
+
+
+### Scatter Plot
+
+```{r}
+ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) + geom_point()
+
+ggsave("penguins_scatter_plot.pdf", height = 6, width = 4)
+```
