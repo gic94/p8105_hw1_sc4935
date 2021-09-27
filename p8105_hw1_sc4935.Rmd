@@ -1,11 +1,11 @@
 ---
-title: "p8150_h1_sc4935"
+title: "p8150_hw1_sc4935"
 author: "Shiwei Chen"
 date: "9/25/2021"
 output: github_document
 ---
 
-```{r}
+```{r, message=FALSE}
 library(tidyverse)
 ```
 
@@ -27,25 +27,28 @@ problem1_df =
 problem1_df
 ```
 
+
+
 ### Secondly, we take the mean of each variable in the dataframe.
 
-```{r}
+```{r, warning=FALSE}
 mean(pull(problem1_df, norm_samp))
 mean(pull(problem1_df, ele_great_0))
 mean(pull(problem1_df, animal))
 mean(pull(problem1_df, animal_type))
 ```
 
+So, the mean of norm_samp is around -0.43, the mean of ele_great_0 is 0.5, but the mean of animal and animal_type are both NAs.
+
 
 
 ### Third, we convert variables from one type to another.
 
-```{r, echo=FALSE}
+```{r, results='hide', warning=FALSE}
 as.numeric(pull(problem1_df, ele_great_0))
 as.numeric(pull(problem1_df, animal))
 as.numeric(pull(problem1_df, animal_type))
 ```
-
 
 We pull the data we required from the data frame, then we use the as.numeric function to convert variables from one type to another.
 
@@ -80,6 +83,7 @@ skimr::skim(penguins)
 nrow(penguins)
 ncol(penguins)
 ```
+So, there are 344 rows and 8 colums within the dataset.
 
 
 
@@ -88,12 +92,13 @@ ncol(penguins)
 ```{r}
 mean(penguins$flipper_length_mm, na.rm = TRUE)
 ```
+So, the mean of flipper length is around 201.
 
 
 
 ### Scatter Plot
 
-```{r}
+```{r, warning=FALSE}
 ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) + geom_point()
 
 ggsave("penguins_scatter_plot.pdf", height = 6, width = 4)
